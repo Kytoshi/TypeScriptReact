@@ -73,7 +73,7 @@ section.game-status > h2 {
   margin: 5px;
 }
 
-section.language-chips {
+section.agent-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { getFarewellText } from "../utils";
-import { languages } from "../languages";
+import { agents } from "../agents";
 import type { JSX } from "react";
 
 export type GameStatusProps = {
@@ -28,19 +28,19 @@ export default function GameStatus({
     <section aria-live="polite" role="status" className={gameStatusClass}>
       {!isGameOver && isLastGuessIncorrect && (
         <p className="farewell-message">
-          {getFarewellText(languages[wrongGuessCount - 1].name)}
+          {getFarewellText(agents[wrongGuessCount - 1].name)}
         </p>
       )}
       {isGameWon && (
         <>
           <h2>You win!</h2>
-          <p>Well done! 🎉</p>
+          <p>Instalock Secured! 🎉</p>
         </>
       )}
       {isGameLost && (
         <>
           <h2>Game over!</h2>
-          <p>You Lose! Better start learning Aseembly 😭</p>
+          <p>Welcome to Pocket Sage Life. 😭</p>
         </>
       )}
 

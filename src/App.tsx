@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { languages } from "./languages";
+import { agents } from "./agents";
 import { getRandomWord } from "./utils";
 
 import ConfettiContainer from "./components/ConfettiContainer";
 import Header from "./components/Header";
 import GameStatus from "./components/GameStatus";
-import LanguageChips from "./components/LanguageChips";
+import LanguageChips from "./components/AgentChips";
 import WordLetters from "./components/WordLetters";
 import AriaLiveStatus from "./components/AriaLiveStatus";
 import Keyboard from "./components/Keyboard";
@@ -19,7 +19,7 @@ export default function AssemblyEndgame() {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
   // Derived values
-  const numGuessesLeft: number = languages.length - 1;
+  const numGuessesLeft: number = agents.length - 1;
   const wrongGuessCount: number = guessedLetters.filter(
     (letter: string): boolean => !currentWord.includes(letter)
   ).length;
@@ -59,7 +59,7 @@ export default function AssemblyEndgame() {
         wrongGuessCount={wrongGuessCount}
       />
 
-      <LanguageChips languages={languages} wrongGuessCount={wrongGuessCount} />
+      <LanguageChips agents={agents} wrongGuessCount={wrongGuessCount} />
 
       <WordLetters
         currentWord={currentWord}
